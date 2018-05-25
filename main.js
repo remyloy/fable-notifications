@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 13);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -4473,1089 +4473,6 @@ function maxElement(s) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = choice1Of2;
-/* harmony export (immutable) */ __webpack_exports__["b"] = choice2Of2;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Symbol__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Util__ = __webpack_require__(1);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-
-
-
-function choice1Of2(v) {
-    return new Choice(0, v);
-}
-function choice2Of2(v) {
-    return new Choice(1, v);
-}
-
-var Choice = function () {
-    function Choice(tag, data) {
-        _classCallCheck(this, Choice);
-
-        this.tag = tag | 0;
-        this.data = data;
-    }
-
-    _createClass(Choice, [{
-        key: "Equals",
-        value: function Equals(other) {
-            return Object(__WEBPACK_IMPORTED_MODULE_1__Util__["f" /* equalsUnions */])(this, other);
-        }
-    }, {
-        key: "CompareTo",
-        value: function CompareTo(other) {
-            return Object(__WEBPACK_IMPORTED_MODULE_1__Util__["d" /* compareUnions */])(this, other);
-        }
-    }, {
-        key: __WEBPACK_IMPORTED_MODULE_0__Symbol__["a" /* default */].reflection,
-        value: function value() {
-            return {
-                type: "Microsoft.FSharp.Core.FSharpChoice",
-                interfaces: ["FSharpUnion", "System.IEquatable", "System.IComparable"],
-                cases: [["Choice1Of2", __WEBPACK_IMPORTED_MODULE_1__Util__["a" /* Any */]], ["Choice2Of2", __WEBPACK_IMPORTED_MODULE_1__Util__["a" /* Any */]]]
-            };
-        }
-    }, {
-        key: "valueIfChoice1",
-        get: function get() {
-            return this.tag === 0 ? this.data : null;
-        }
-    }, {
-        key: "valueIfChoice2",
-        get: function get() {
-            return this.tag === 1 ? this.data : null;
-        }
-    }]);
-
-    return Choice;
-}();
-
-/* unused harmony default export */ var _unused_webpack_default_export = (Choice);
-
-/***/ }),
-/* 13 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_fs__ = __webpack_require__(14);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "log", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["b"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "showNotification", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["c"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "btn", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["a"]; });
-
-
-/***/ }),
-/* 14 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["b"] = log;
-/* harmony export (immutable) */ __webpack_exports__["c"] = showNotification;
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return btn; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Option__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Serialize__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_AsyncBuilder__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_List__ = __webpack_require__(3);
-
-
-
-
-
-function log(x) {
-  console.log(Object(__WEBPACK_IMPORTED_MODULE_0__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Option__["c" /* makeSome */])(x));
-  var p = document.createElement("p");
-  p.textContent = Object(__WEBPACK_IMPORTED_MODULE_1__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Serialize__["a" /* toJson */])(x);
-  document.body.appendChild(p), void 0;
-}
-function showNotification() {
-  Object(__WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["b" /* startImmediate */])(function (builder_) {
-    return builder_.Delay(function () {
-      return builder_.TryWith(builder_.Delay(function () {
-        var reg = navigator.serviceWorker.register("worker.js");
-        return builder_.Bind(Object(__WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(reg), function (_arg1) {
-          return builder_.Bind(Object(__WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(_arg1.pushManager.getSubscription()), function (_arg2) {
-            return builder_.Bind(function (builder__1) {
-              return builder__1.Delay(function () {
-                return _arg2 == null ? builder__1.ReturnFrom(Object(__WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(_arg1.pushManager.subscribe({
-                  userVisibleOnly: true
-                }))) : builder__1.Return(_arg2);
-              });
-            }(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_AsyncBuilder__["f" /* singleton */]), function (_arg3) {
-              log(_arg3);
-              return builder_.Bind(Object(__WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(Notification.requestPermission()), function (_arg4) {
-                if (_arg4 === "granted1") {
-                  log("granted");
-                  _arg1.showNotification("Vibration sample", {
-                    body: "Buzz! Buzz! ",
-                    vibrate: Object(__WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_List__["b" /* ofArray */])([200, 100, 200, 100, 200, 100, 200])
-                  }), void 0;
-                  return builder_.Zero();
-                } else {
-                  log("denied");
-                  return builder_.Zero();
-                }
-              });
-            });
-          });
-        });
-      }), function (_arg5) {
-        log(_arg5);
-        return builder_.Zero();
-      });
-    });
-  }(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_AsyncBuilder__["f" /* singleton */]));
-}
-var btn = document.getElementById("btn1");
-btn.addEventListener("click", function (evt) {
-  showNotification();
-});
-
-/***/ }),
-/* 15 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export deflate */
-/* harmony export (immutable) */ __webpack_exports__["a"] = toJson;
-/* unused harmony export inflate */
-/* unused harmony export ofJson */
-/* unused harmony export toJsonWithTypeInfo */
-/* unused harmony export ofJsonWithTypeInfo */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Date__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__DateOffset__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__List__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Map__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Option__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Reflection__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Seq__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Set__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__String__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Symbol__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Util__ = __webpack_require__(1);
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-// tslint:disable:ban-types
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function isDate(v) {
-    return v instanceof Date;
-}
-function deflateDate(v) {
-    return Object(__WEBPACK_IMPORTED_MODULE_0__Date__["i" /* toString */])(v, "O");
-}
-function deflateValue(v) {
-    if (isDate(v)) {
-        return deflateDate(v);
-    }
-    return v;
-}
-function deflate(v) {
-    if (Array.isArray(v)) {
-        return v.map(deflateValue);
-    } else if (ArrayBuffer.isView(v)) {
-        return Array.from(v).map(deflateValue);
-    } else if (isDate(v)) {
-        return deflateDate(v);
-    } else if (v != null && (typeof v === "undefined" ? "undefined" : _typeof(v)) === "object") {
-        if (v instanceof __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */] || v instanceof __WEBPACK_IMPORTED_MODULE_7__Set__["b" /* default */] || v instanceof Set) {
-            return Array.from(v).map(deflateValue);
-        } else if (v instanceof __WEBPACK_IMPORTED_MODULE_3__Map__["b" /* default */] || v instanceof Map) {
-            var stringKeys = null;
-            return Object(__WEBPACK_IMPORTED_MODULE_6__Seq__["d" /* fold */])(function (o, kv) {
-                if (stringKeys === null) {
-                    stringKeys = typeof kv[0] === "string";
-                }
-                o[stringKeys ? kv[0] : toJson(kv[0])] = deflateValue(kv[1]);
-                return o;
-            }, {}, v);
-        } else if (v instanceof __WEBPACK_IMPORTED_MODULE_4__Option__["a" /* Some */]) {
-            return deflateValue(v.value);
-        }
-        var reflectionInfo = typeof v[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection] === "function" ? v[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection]() : {};
-        if (reflectionInfo.properties) {
-            return Object(__WEBPACK_IMPORTED_MODULE_6__Seq__["d" /* fold */])(function (o, prop) {
-                return o[prop] = deflateValue(v[prop]), o;
-            }, {}, Object.getOwnPropertyNames(reflectionInfo.properties));
-        } else if (reflectionInfo.cases) {
-            var caseInfo = reflectionInfo.cases[v.tag];
-            var caseName = caseInfo[0];
-            var fieldsLength = caseInfo.length - 1;
-            if (fieldsLength === 0) {
-                return caseName;
-            } else {
-                // Prevent undefined assignment from removing case property; see #611:
-                return _defineProperty({}, caseName, v.data !== void 0 ? deflate(v.data) : null);
-            }
-        } else {
-            return Object(__WEBPACK_IMPORTED_MODULE_6__Seq__["d" /* fold */])(function (o, prop) {
-                return o[prop] = deflateValue(v[prop]), o;
-            }, {}, Object.getOwnPropertyNames(v));
-        }
-    }
-    return v;
-}
-function toJson(o) {
-    return JSON.stringify(deflateValue(o), function (k, v) {
-        return deflate(v);
-    });
-}
-function combine(path1, path2) {
-    return typeof path2 === "number" ? path1 + "[" + path2 + "]" : (path1 ? path1 + "." : "") + path2;
-}
-function isNullable(typ) {
-    if (typeof typ === "string") {
-        return typ !== "boolean" && typ !== "number";
-    } else if (typ instanceof __WEBPACK_IMPORTED_MODULE_10__Util__["b" /* NonDeclaredType */]) {
-        return typ.kind !== "Array" && typ.kind !== "Tuple";
-    } else {
-        var info = typeof typ.prototype[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection] === "function" ? typ.prototype[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection]() : null;
-        return info ? info.nullable : true;
-    }
-}
-function invalidate(val, typ, path) {
-    var str = Object(__WEBPACK_IMPORTED_MODULE_8__String__["b" /* toText */])(Object(__WEBPACK_IMPORTED_MODULE_8__String__["a" /* printf */])("%A"))(val);
-    throw new Error(str + " " + (path ? "(" + path + ")" : "") + " is not of type " + Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["a" /* getTypeFullName */])(typ));
-}
-function needsInflate(enclosing) {
-    var typ = enclosing.head;
-    if (typeof typ === "string") {
-        return false;
-    }
-    if (typ instanceof __WEBPACK_IMPORTED_MODULE_10__Util__["b" /* NonDeclaredType */]) {
-        switch (typ.kind) {
-            case "Option":
-            case "Array":
-                return typ.definition != null || needsInflate(new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](typ.generics[0], enclosing));
-            case "Tuple":
-                return typ.generics.some(function (x) {
-                    return needsInflate(new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](x, enclosing));
-                });
-            case "Function":
-                return false;
-            case "GenericParam":
-                return needsInflate(Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(typ.definition, enclosing.tail));
-            case "GenericType":
-                return true;
-            default:
-                return false;
-        }
-    }
-    return true;
-}
-function inflateArray(arr, enclosing, path) {
-    if (!Array.isArray) {
-        invalidate(arr, "array", path);
-    }
-    // TODO: Validate non-inflated elements
-    return needsInflate(enclosing) ? arr.map(function (x, i) {
-        return inflate(x, enclosing, combine(path, i));
-    }) : arr;
-}
-function inflateMap(obj, keyEnclosing, valEnclosing, path) {
-    var inflateKey = keyEnclosing.head !== "string";
-    var inflateVal = needsInflate(valEnclosing);
-    return Object.getOwnPropertyNames(obj).map(function (k) {
-        var key = inflateKey ? inflate(JSON.parse(k), keyEnclosing, combine(path, k)) : k;
-        var val = inflateVal ? inflate(obj[k], valEnclosing, combine(path, k)) : obj[k];
-        return [key, val];
-    });
-}
-function inflateList(val, enclosing, path) {
-    var ar = [];
-    var li = new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */]();
-    var cur = val;
-    var inf = needsInflate(enclosing);
-    while (cur.tail != null) {
-        ar.push(inf ? inflate(cur.head, enclosing, path) : cur.head);
-        cur = cur.tail;
-    }
-    ar.reverse();
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-        for (var _iterator = ar[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var a = _step.value;
-
-            li = new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](a, li);
-        }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
-            }
-        }
-    }
-
-    return li;
-}
-function inflateUnion(val, typ, info, path, inflateField) {
-    var caseName = void 0;
-    // Same shape as runtime DUs, for example, if they've been serialized with `JSON.stringify`
-    if (typeof val.tag === "number") {
-        return Object.assign(new typ(), val);
-    } else if (typeof val === "string") {
-        // Cases without fields are serialized as strings by `toJson`
-        caseName = val;
-    } else {
-        // Non-empty cases are serialized as `{ "MyCase": [1, 2] }` by `toJson`
-        caseName = Object.getOwnPropertyNames(val)[0];
-    }
-    // Locate case index
-    var tag = -1;
-    for (var i = 0; info.cases[i] != null; i++) {
-        if (info.cases[i][0] === caseName) {
-            tag = i;
-            break;
-        }
-    }
-    // Validate
-    if (tag === -1) {
-        invalidate(val, typ, path);
-    }
-    var caseInfo = info.cases[tag];
-    var inflatedData = void 0;
-    if (caseInfo.length > 2) {
-        inflatedData = [];
-        var data = val[caseName];
-        path = combine(path, caseName);
-        for (var _i = 0; _i < data.length; _i++) {
-            inflatedData.push(inflateField ? inflateField(data[_i], caseInfo[_i + 1], combine(path, _i)) : data[_i]);
-        }
-    } else if (caseInfo.length > 1) {
-        inflatedData = inflateField ? inflateField(val[caseName], caseInfo[1], combine(path, caseName)) : val[caseName];
-    }
-    return new typ(tag, inflatedData);
-}
-function inflate(val, typ, path) {
-    var enclosing = null;
-    if (typ instanceof __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */]) {
-        enclosing = typ;
-        typ = typ.head;
-    } else {
-        enclosing = new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](typ, new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */]());
-    }
-    if (val == null) {
-        if (!isNullable(typ)) {
-            invalidate(val, typ, path);
-        }
-        return val;
-    } else if (typeof typ === "string") {
-        if ((typ === "boolean" || typ === "number" || typ === "string") && (typeof val === "undefined" ? "undefined" : _typeof(val)) !== typ) {
-            invalidate(val, typ, path);
-        }
-        return val;
-    } else if (typ instanceof __WEBPACK_IMPORTED_MODULE_10__Util__["b" /* NonDeclaredType */]) {
-        switch (typ.kind) {
-            case "Unit":
-                return null;
-            case "Option":
-                return inflate(val, new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](typ.generics[0], enclosing), path);
-            case "Array":
-                if (typ.definition != null) {
-                    return new typ.definition(val);
-                } else {
-                    return inflateArray(val, new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](typ.generics[0], enclosing), path);
-                }
-            case "Tuple":
-                return typ.generics.map(function (x, i) {
-                    return inflate(val[i], new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](x, enclosing), combine(path, i));
-                });
-            case "Function":
-                return val;
-            case "GenericParam":
-                return inflate(val, Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(typ.definition, enclosing.tail), path);
-            case "GenericType":
-                var def = typ.definition;
-                if (def === __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */]) {
-                    return Array.isArray(val) ? Object(__WEBPACK_IMPORTED_MODULE_2__List__["b" /* ofArray */])(inflateArray(val, Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(0, enclosing), path)) : inflateList(val, Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(0, enclosing), path);
-                }
-                // TODO: Should we try to inflate also sets and maps serialized with `JSON.stringify`?
-                if (def === __WEBPACK_IMPORTED_MODULE_7__Set__["b" /* default */]) {
-                    return Object(__WEBPACK_IMPORTED_MODULE_7__Set__["a" /* create */])(inflateArray(val, Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(0, enclosing), path));
-                }
-                if (def === Set) {
-                    return new Set(inflateArray(val, Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(0, enclosing), path));
-                }
-                if (def === __WEBPACK_IMPORTED_MODULE_3__Map__["b" /* default */]) {
-                    return Object(__WEBPACK_IMPORTED_MODULE_3__Map__["a" /* create */])(inflateMap(val, Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(0, enclosing), Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(1, enclosing), path));
-                }
-                if (def === Map) {
-                    return new Map(inflateMap(val, Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(0, enclosing), Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(1, enclosing), path));
-                }
-                return inflate(val, new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](typ.definition, enclosing), path);
-            case "Interface":
-                return typ.definition === "System.DateTimeOffset" ? Object(__WEBPACK_IMPORTED_MODULE_1__DateOffset__["a" /* parse */])(val) : val;
-            default:
-                // case "Interface": // case "Any":
-                return val;
-        }
-    } else if (typeof typ === "function") {
-        if (typ === Date) {
-            return Object(__WEBPACK_IMPORTED_MODULE_0__Date__["g" /* parse */])(val, true);
-        }
-        if (typeof typ.ofJSON === "function") {
-            return typ.ofJSON(val);
-        }
-        var info = typeof typ.prototype[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection] === "function" ? typ.prototype[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection]() : {};
-        // Union types
-        if (info.cases) {
-            return inflateUnion(val, typ, info, path, function (fi, t, p) {
-                return inflate(fi, new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](t, enclosing), path);
-            });
-        }
-        if (info.properties) {
-            var newObj = new typ();
-            var properties = info.properties;
-            var ks = Object.getOwnPropertyNames(properties);
-            var _iteratorNormalCompletion2 = true;
-            var _didIteratorError2 = false;
-            var _iteratorError2 = undefined;
-
-            try {
-                for (var _iterator2 = ks[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                    var k = _step2.value;
-
-                    newObj[k] = inflate(val[k], new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](properties[k], enclosing), combine(path, k));
-                }
-            } catch (err) {
-                _didIteratorError2 = true;
-                _iteratorError2 = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion2 && _iterator2.return) {
-                        _iterator2.return();
-                    }
-                } finally {
-                    if (_didIteratorError2) {
-                        throw _iteratorError2;
-                    }
-                }
-            }
-
-            return newObj;
-        }
-        return val;
-    }
-    throw new Error("Unexpected type when deserializing JSON: " + typ);
-}
-function inflatePublic(val, genArgs) {
-    return inflate(val, genArgs ? genArgs.T : null, "");
-}
-
-function ofJson(json, genArgs) {
-    function raise(msg, err, json, targetType) {
-        var fullMsg = "Cannot deserialize";
-        if (targetType != null) {
-            fullMsg += " into " + Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["a" /* getTypeFullName */])(targetType);
-        }
-        fullMsg += " - Error (" + msg + "): " + err.message + " - Data: '" + json + "'";
-        throw new Error(fullMsg);
-    }
-    var value = null;
-    var targetType = genArgs ? genArgs.T : null;
-    try {
-        value = JSON.parse(json);
-    } catch (e) {
-        raise("JSON.parse", e, json, targetType);
-    }
-    try {
-        value = inflate(value, targetType, "");
-    } catch (e) {
-        raise("inflate", e, json, targetType);
-    }
-    return value;
-}
-// TODO: Dates and types with `toJSON` are not adding the $type field
-function toJsonWithTypeInfo(val) {
-    return JSON.stringify(val, function (k, v) {
-        if (ArrayBuffer.isView(v)) {
-            return Array.from(v);
-        } else if (v != null && (typeof v === "undefined" ? "undefined" : _typeof(v)) === "object") {
-            var info = typeof v[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection] === "function" ? v[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection]() : {};
-            if (v instanceof __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */] || v instanceof __WEBPACK_IMPORTED_MODULE_7__Set__["b" /* default */] || v instanceof Set) {
-                return {
-                    $type: info.type || "System.Collections.Generic.HashSet",
-                    $values: Array.from(v)
-                };
-            } else if (v instanceof __WEBPACK_IMPORTED_MODULE_3__Map__["b" /* default */] || v instanceof Map) {
-                return Object(__WEBPACK_IMPORTED_MODULE_6__Seq__["d" /* fold */])(function (o, kv) {
-                    o[kv[0]] = kv[1];return o;
-                }, { $type: info.type || "System.Collections.Generic.Dictionary" }, v);
-            } else if (info.properties) {
-                return Object(__WEBPACK_IMPORTED_MODULE_6__Seq__["d" /* fold */])(function (o, prop) {
-                    return o[prop] = v[prop], o;
-                }, { $type: info.type }, Object.getOwnPropertyNames(info.properties));
-            } else if (info.cases) {
-                var _ref2;
-
-                var uci = info.cases[v.tag];
-                return _ref2 = {}, _defineProperty(_ref2, uci[0], v.data !== void 0 ? v.data : null), _defineProperty(_ref2, "$type", info.type), _ref2;
-            }
-        }
-        return v;
-    });
-}
-function ofJsonWithTypeInfo(json, genArgs) {
-    var parsed = JSON.parse(json, function (key, v) {
-        if (v == null) {
-            return v;
-        } else if ((typeof v === "undefined" ? "undefined" : _typeof(v)) === "object" && typeof v.$type === "string") {
-            // Remove generic args and assembly info added by Newtonsoft.Json
-            var type = v.$type.replace("+", ".");
-            var i = type.indexOf("`");
-            delete v.$type;
-            if (i > -1) {
-                type = type.substr(0, i);
-            } else {
-                i = type.indexOf(",");
-                type = i > -1 ? type.substr(0, i) : type;
-            }
-            if (type === "System.Collections.Generic.List" || type.indexOf("[]") === type.length - 2) {
-                return v.$values;
-            }
-            if (type === "Microsoft.FSharp.Collections.FSharpList") {
-                return Object(__WEBPACK_IMPORTED_MODULE_2__List__["b" /* ofArray */])(v.$values);
-            } else if (type === "Microsoft.FSharp.Collections.FSharpSet") {
-                return Object(__WEBPACK_IMPORTED_MODULE_7__Set__["a" /* create */])(v.$values);
-            } else if (type === "System.Collections.Generic.HashSet") {
-                return new Set(v.$values);
-            } else if (type === "Microsoft.FSharp.Collections.FSharpMap") {
-                return Object(__WEBPACK_IMPORTED_MODULE_3__Map__["a" /* create */])(Object.getOwnPropertyNames(v).map(function (k) {
-                    return [k, v[k]];
-                }));
-            } else if (type === "System.Collections.Generic.Dictionary") {
-                return new Map(Object.getOwnPropertyNames(v).map(function (k) {
-                    return [k, v[k]];
-                }));
-            } else {
-                var typ = Object(__WEBPACK_IMPORTED_MODULE_9__Symbol__["b" /* getType */])(type);
-                if (typ) {
-                    if (typeof typ.ofJSON === "function") {
-                        return typ.ofJSON(v);
-                    }
-                    var info = typeof typ.prototype[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection] === "function" ? typ.prototype[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection]() : {};
-                    if (info.cases) {
-                        return inflateUnion(v, typ, info, key);
-                    }
-                    return Object.assign(new typ(), v);
-                }
-            }
-        } else if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:[+-]\d{2}:\d{2}|Z)$/.test(v)) {
-            return Object(__WEBPACK_IMPORTED_MODULE_0__Date__["g" /* parse */])(v, true);
-        } else {
-            return v;
-        }
-    });
-    var expected = genArgs ? genArgs.T : null;
-    if (parsed != null && typeof expected === "function" && !(parsed instanceof Object(__WEBPACK_IMPORTED_MODULE_10__Util__["g" /* getDefinition */])(expected))) {
-        throw new Error("JSON is not of type " + expected.name + ": " + json);
-    }
-    return parsed;
-}
-
-/***/ }),
-/* 16 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export default */
-/* unused harmony export fromDate */
-/* unused harmony export minValue */
-/* unused harmony export maxValue */
-/* harmony export (immutable) */ __webpack_exports__["a"] = parse;
-/* unused harmony export tryParse */
-/* unused harmony export create */
-/* unused harmony export now */
-/* unused harmony export utcNow */
-/* unused harmony export toUniversalTime */
-/* unused harmony export toLocalTime */
-/* unused harmony export timeOfDay */
-/* unused harmony export date */
-/* unused harmony export day */
-/* unused harmony export hour */
-/* unused harmony export millisecond */
-/* unused harmony export minute */
-/* unused harmony export month */
-/* unused harmony export second */
-/* unused harmony export year */
-/* unused harmony export dayOfWeek */
-/* unused harmony export dayOfYear */
-/* unused harmony export add */
-/* unused harmony export addDays */
-/* unused harmony export addHours */
-/* unused harmony export addMinutes */
-/* unused harmony export addSeconds */
-/* unused harmony export addMilliseconds */
-/* unused harmony export addYears */
-/* unused harmony export addMonths */
-/* unused harmony export subtract */
-/* unused harmony export equals */
-/* unused harmony export equalsExact */
-/* unused harmony export compare */
-/* unused harmony export compareTo */
-/* unused harmony export op_Addition */
-/* unused harmony export op_Subtraction */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Date__ = __webpack_require__(7);
-
-function DateTimeOffset(value, offset) {
-    var d = new Date(value);
-    d.offset = offset != null ? offset : new Date().getTimezoneOffset() * -60000;
-    return d;
-}
-function fromDate(date, offset) {
-    var isUtc = date.kind === 1 /* UTC */;
-    var offset2 = isUtc ? 0 : date.getTimezoneOffset() * -60000;
-    if (offset != null && offset !== offset2) {
-        throw new Error(isUtc ? "The UTC Offset for Utc DateTime instances must be 0." : "The UTC Offset of the local dateTime parameter does not match the offset argument.");
-    }
-    return DateTimeOffset(date.getTime(), offset2);
-}
-function minValue() {
-    // This is "0001-01-01T00:00:00.000Z", actual JS min value is -8640000000000000
-    return DateTimeOffset(-62135596800000, 0);
-}
-function maxValue() {
-    // This is "9999-12-31T23:59:59.999Z", actual JS max value is 8640000000000000
-    return DateTimeOffset(253402300799999, 0);
-}
-function parse(str) {
-    var date = Object(__WEBPACK_IMPORTED_MODULE_0__Date__["h" /* parseRaw */])(str);
-    var offsetMatch = __WEBPACK_IMPORTED_MODULE_0__Date__["d" /* offsetRegex */].exec(str);
-    var offset = offsetMatch == null ? date.getTimezoneOffset() * -60000 : offsetMatch[0] === "Z" ? 0 : parseInt(offsetMatch[1], 10) * 3600000 + parseInt(offsetMatch[2], 10) * 60000;
-    return DateTimeOffset(date.getTime(), offset);
-}
-function tryParse(v) {
-    try {
-        return [true, parse(v)];
-    } catch (_err) {
-        return [false, minValue()];
-    }
-}
-function create(year, month, day, h, m, s, ms, offset) {
-    if (offset == null) {
-        offset = ms;
-        ms = 0;
-    }
-    if (offset !== 0) {
-        if (offset % 60000 !== 0) {
-            throw new Error("Offset must be specified in whole minutes");
-        }
-        if (~~(offset / 3600000) > 14) {
-            throw new Error("Offset must be within plus or minus 14 hour");
-        }
-    }
-    var date = void 0;
-    if (offset === 0) {
-        date = new Date(Date.UTC(year, month - 1, day, h, m, s, ms));
-        if (year <= 99) {
-            date.setFullYear(year, month - 1, day);
-        }
-    } else {
-        var str = Object(__WEBPACK_IMPORTED_MODULE_0__Date__["f" /* padWithZeros */])(year, 4) + "-" + Object(__WEBPACK_IMPORTED_MODULE_0__Date__["f" /* padWithZeros */])(month, 2) + "-" + Object(__WEBPACK_IMPORTED_MODULE_0__Date__["f" /* padWithZeros */])(day, 2) + "T" + Object(__WEBPACK_IMPORTED_MODULE_0__Date__["f" /* padWithZeros */])(h, 2) + ":" + Object(__WEBPACK_IMPORTED_MODULE_0__Date__["f" /* padWithZeros */])(m, 2) + ":" + Object(__WEBPACK_IMPORTED_MODULE_0__Date__["f" /* padWithZeros */])(s, 2) + "." + Object(__WEBPACK_IMPORTED_MODULE_0__Date__["f" /* padWithZeros */])(ms, 3) + Object(__WEBPACK_IMPORTED_MODULE_0__Date__["e" /* offsetToString */])(offset);
-        date = new Date(str);
-    }
-    var dateValue = date.getTime();
-    if (isNaN(dateValue)) {
-        throw new Error("The parameters describe an unrepresentable Date");
-    }
-    return DateTimeOffset(dateValue, offset);
-}
-function now() {
-    var date = new Date();
-    return DateTimeOffset(date.getTime(), date.getTimezoneOffset() * -60000);
-}
-function utcNow() {
-    return DateTimeOffset(Date.now(), 0);
-}
-function toUniversalTime(date) {
-    return DateTimeOffset(date.getTime(), 0);
-}
-function toLocalTime(date) {
-    return DateTimeOffset(date.getTime(), date.getTimezoneOffset() * -60000);
-}
-function timeOfDay(d) {
-    var d2 = new Date(d.getTime() + d.offset);
-    return d2.getUTCHours() * 3600000 + d2.getUTCMinutes() * 60000 + d2.getUTCSeconds() * 1000 + d2.getUTCMilliseconds();
-}
-function date(d) {
-    var d2 = new Date(d.getTime() + d.offset);
-    return Object(__WEBPACK_IMPORTED_MODULE_0__Date__["b" /* create */])(d2.getUTCFullYear(), d2.getUTCMonth() + 1, d2.getUTCDate(), 0, 0, 0, 0);
-}
-function day(d) {
-    return new Date(d.getTime() + d.offset).getUTCDate();
-}
-function hour(d) {
-    return new Date(d.getTime() + d.offset).getUTCHours();
-}
-function millisecond(d) {
-    return new Date(d.getTime() + d.offset).getUTCMilliseconds();
-}
-function minute(d) {
-    return new Date(d.getTime() + d.offset).getUTCMinutes();
-}
-function month(d) {
-    return new Date(d.getTime() + d.offset).getUTCMonth() + 1;
-}
-function second(d) {
-    return new Date(d.getTime() + d.offset).getUTCSeconds();
-}
-function year(d) {
-    return new Date(d.getTime() + d.offset).getUTCFullYear();
-}
-function dayOfWeek(d) {
-    return new Date(d.getTime() + d.offset).getUTCDay();
-}
-function dayOfYear(d) {
-    var d2 = new Date(d.getTime() + d.offset);
-    var _year = d2.getUTCFullYear();
-    var _month = d2.getUTCMonth() + 1;
-    var _day = d2.getUTCDate();
-    for (var i = 1; i < _month; i++) {
-        _day += Object(__WEBPACK_IMPORTED_MODULE_0__Date__["c" /* daysInMonth */])(_year, i);
-    }
-    return _day;
-}
-function add(d, ts) {
-    return DateTimeOffset(d.getTime() + ts, d.offset);
-}
-function addDays(d, v) {
-    return DateTimeOffset(d.getTime() + v * 86400000, d.offset);
-}
-function addHours(d, v) {
-    return DateTimeOffset(d.getTime() + v * 3600000, d.offset);
-}
-function addMinutes(d, v) {
-    return DateTimeOffset(d.getTime() + v * 60000, d.offset);
-}
-function addSeconds(d, v) {
-    return DateTimeOffset(d.getTime() + v * 1000, d.offset);
-}
-function addMilliseconds(d, v) {
-    return DateTimeOffset(d.getTime() + v, d.offset);
-}
-function addYears(d, v) {
-    var newMonth = d.getUTCMonth() + 1;
-    var newYear = d.getUTCFullYear() + v;
-    var _daysInMonth = Object(__WEBPACK_IMPORTED_MODULE_0__Date__["c" /* daysInMonth */])(newYear, newMonth);
-    var newDay = Math.min(_daysInMonth, d.getUTCDate());
-    return create(newYear, newMonth, newDay, d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds(), d.getUTCMilliseconds(), d.offset);
-}
-function addMonths(d, v) {
-    var d2 = new Date(d.getTime() + d.offset);
-    var newMonth = d2.getUTCMonth() + 1 + v;
-    var newMonth_ = 0;
-    var yearOffset = 0;
-    if (newMonth > 12) {
-        newMonth_ = newMonth % 12;
-        yearOffset = Math.floor(newMonth / 12);
-        newMonth = newMonth_;
-    } else if (newMonth < 1) {
-        newMonth_ = 12 + newMonth % 12;
-        yearOffset = Math.floor(newMonth / 12) + (newMonth_ === 12 ? -1 : 0);
-        newMonth = newMonth_;
-    }
-    var newYear = d2.getUTCFullYear() + yearOffset;
-    var _daysInMonth = Object(__WEBPACK_IMPORTED_MODULE_0__Date__["c" /* daysInMonth */])(newYear, newMonth);
-    var newDay = Math.min(_daysInMonth, d2.getUTCDate());
-    return create(newYear, newMonth, newDay, d2.getUTCHours(), d2.getUTCMinutes(), d2.getUTCSeconds(), d2.getUTCMilliseconds(), d.offset);
-}
-function subtract(d, that) {
-    return typeof that === "number" ? DateTimeOffset(d.getTime() - that, d.offset) : d.getTime() - that.getTime();
-}
-function equals(d1, d2) {
-    return d1.getTime() === d2.getTime();
-}
-function equalsExact(d1, d2) {
-    return d1.getTime() === d2.getTime() && d1.offset === d2.offset;
-}
-function compare(d1, d2) {
-    return Object(__WEBPACK_IMPORTED_MODULE_0__Date__["a" /* compare */])(d1, d2);
-}
-var compareTo = compare;
-function op_Addition(x, y) {
-    return add(x, y);
-}
-function op_Subtraction(x, y) {
-    return subtract(x, y);
-}
-
-/***/ }),
-/* 17 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MemberInfo */
-/* harmony export (immutable) */ __webpack_exports__["b"] = resolveGeneric;
-/* unused harmony export getType */
-/* harmony export (immutable) */ __webpack_exports__["a"] = getTypeFullName;
-/* unused harmony export getName */
-/* unused harmony export getPrototypeOfType */
-/* unused harmony export getProperties */
-/* unused harmony export getUnionCases */
-/* unused harmony export getPropertyValues */
-/* unused harmony export getUnionFields */
-/* unused harmony export makeUnion */
-/* unused harmony export getTupleElements */
-/* unused harmony export isTupleType */
-/* unused harmony export getFunctionElements */
-/* unused harmony export isFunctionType */
-/* unused harmony export getGenericArguments */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__List__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Symbol__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Util__ = __webpack_require__(1);
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-
-
-
-var MemberInfo = function () {
-    function MemberInfo(name, index, declaringType, propertyType, unionFields) {
-        _classCallCheck(this, MemberInfo);
-
-        this.name = name;
-        this.index = index;
-        this.declaringType = declaringType;
-        this.propertyType = propertyType;
-        this.unionFields = unionFields;
-    }
-
-    _createClass(MemberInfo, [{
-        key: "getUnionFields",
-        value: function getUnionFields() {
-            var _this = this;
-
-            return this.unionFields.map(function (fi, i) {
-                return new MemberInfo("unknown", i, _this.declaringType, fi);
-            });
-        }
-    }]);
-
-    return MemberInfo;
-}();
-function resolveGeneric(idx, enclosing) {
-    try {
-        var t = enclosing.head;
-        if (t.generics == null) {
-            return resolveGeneric(idx, enclosing.tail);
-        } else {
-            var name = typeof idx === "string" ? idx : Object.getOwnPropertyNames(t.generics)[idx];
-            var resolved = t.generics[name];
-            if (resolved == null) {
-                return resolveGeneric(idx, enclosing.tail);
-            } else if (resolved instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */] && resolved.kind === "GenericParam") {
-                return resolveGeneric(resolved.definition, enclosing.tail);
-            } else {
-                return new __WEBPACK_IMPORTED_MODULE_0__List__["a" /* default */](resolved, enclosing);
-            }
-        }
-    } catch (err) {
-        throw new Error("Cannot resolve generic argument " + idx + ": " + err);
-    }
-}
-function getType(obj) {
-    var t = typeof obj === "undefined" ? "undefined" : _typeof(obj);
-    switch (t) {
-        case "boolean":
-        case "number":
-        case "string":
-        case "function":
-            return t;
-        default:
-            return Object.getPrototypeOf(obj).constructor;
-    }
-}
-// TODO: This needs improvement, check namespace for non-custom types?
-function getTypeFullName(typ, option) {
-    function trim(fullName, opt) {
-        if (typeof fullName !== "string") {
-            return "unknown";
-        }
-        if (opt === "name") {
-            var i = fullName.lastIndexOf(".");
-            return fullName.substr(i + 1);
-        }
-        if (opt === "namespace") {
-            var _i = fullName.lastIndexOf(".");
-            return _i > -1 ? fullName.substr(0, _i) : "";
-        }
-        return fullName;
-    }
-    if (typeof typ === "string") {
-        return typ;
-    } else if (typ instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */]) {
-        switch (typ.kind) {
-            case "Unit":
-                return "unit";
-            case "Option":
-                return getTypeFullName(typ.generics[0], option) + " option";
-            case "Array":
-                return getTypeFullName(typ.generics[0], option) + "[]";
-            case "Tuple":
-                return typ.generics.map(function (x) {
-                    return getTypeFullName(x, option);
-                }).join(" * ");
-            case "Function":
-                return "Func<" + typ.generics.map(function (x) {
-                    return getTypeFullName(x, option);
-                }).join(", ") + ">";
-            case "GenericParam":
-            case "Interface":
-                return typ.definition;
-            case "GenericType":
-                return getTypeFullName(typ.definition, option);
-            case "Any":
-            default:
-                return "unknown";
-        }
-    } else {
-        // Attention: this doesn't work with Object.getPrototypeOf
-        var proto = typ.prototype;
-        return trim(typeof proto[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection] === "function" ? proto[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection]().type : null, option);
-    }
-}
-function getName(x) {
-    if (x instanceof MemberInfo) {
-        return x.name;
-    }
-    return getTypeFullName(x, "name");
-}
-function getPrototypeOfType(typ) {
-    if (typeof typ === "string") {
-        return null;
-    } else if (typ instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */]) {
-        return typ.kind === "GenericType" ? typ.definition.prototype : null;
-    } else {
-        return typ.prototype;
-    }
-}
-function getProperties(typ) {
-    var proto = getPrototypeOfType(typ);
-    if (proto != null && typeof proto[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection] === "function") {
-        var info = proto[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection]();
-        if (info.properties) {
-            return Object.getOwnPropertyNames(info.properties).map(function (k, i) {
-                return new MemberInfo(k, i, typ, info.properties[k]);
-            });
-        }
-    }
-    throw new Error("Type " + getTypeFullName(typ) + " doesn't contain property info.");
-}
-function getUnionCases(typ) {
-    var proto = getPrototypeOfType(typ);
-    if (proto != null && typeof proto[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection] === "function") {
-        var info = proto[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection]();
-        if (info.cases) {
-            return info.cases.map(function (uci, i) {
-                return new MemberInfo(uci[0], i, typ, null, uci.slice(1));
-            });
-        }
-    }
-    throw new Error("Type " + getTypeFullName(typ) + " doesn't contain union case info.");
-}
-function getPropertyValues(obj) {
-    return Object(__WEBPACK_IMPORTED_MODULE_2__Util__["h" /* getPropertyNames */])(obj).map(function (k) {
-        return obj[k];
-    });
-}
-function getUnionFields(obj, typ) {
-    if (obj != null && typeof obj[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection] === "function") {
-        var info = obj[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection]();
-        if (info.cases) {
-            var uci = info.cases[obj.tag];
-            if (uci != null) {
-                var fields = uci.length > 2 ? obj.data : uci.length > 1 ? [obj.data] : [];
-                return [new MemberInfo(uci[0], obj.tag, typ, null, uci.slice(1)), fields];
-            }
-        }
-    }
-    throw new Error("Not an F# union type.");
-}
-function makeUnion(caseInfo, args) {
-    var Cons = Object(__WEBPACK_IMPORTED_MODULE_2__Util__["g" /* getDefinition */])(caseInfo.declaringType);
-    switch (args.length) {
-        case 0:
-            return new Cons(caseInfo.index);
-        case 1:
-            return new Cons(caseInfo.index, args[0]);
-        default:
-            return new Cons(caseInfo.index, args);
-    }
-}
-function getTupleElements(typ) {
-    if (typ instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */] && typ.kind === "Tuple") {
-        return typ.generics;
-    }
-    throw new Error("Type " + getTypeFullName(typ) + " is not a tuple type.");
-}
-function isTupleType(typ) {
-    if (typ instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */]) {
-        return typ.kind === "Tuple";
-    }
-    return false;
-}
-function getFunctionElements(typ) {
-    if (typ === "function") {
-        throw new Error("The type of the function must be known at compile time to get the elements.");
-    }
-    if (typ instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */] && typ.kind === "Function") {
-        return typ.generics;
-    }
-    throw new Error("Type " + getTypeFullName(typ) + " is not a function type.");
-}
-function isFunctionType(typ) {
-    return typ === "function" || typ instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */] && typ.kind === "Function";
-}
-function getGenericArguments(typ) {
-    if (typ instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */]) {
-        if (Array.isArray(typ.generics)) {
-            return typ.generics;
-        } else {
-            var dic = typ.generics;
-            return Object.keys(dic).map(function (k) {
-                return dic[k];
-            });
-        }
-    }
-    return [];
-}
-
-/***/ }),
-/* 18 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* unused harmony export compare */
 /* unused harmony export compareTo */
 /* unused harmony export startsWith */
@@ -5563,7 +4480,7 @@ function getGenericArguments(typ) {
 /* harmony export (immutable) */ __webpack_exports__["a"] = printf;
 /* unused harmony export toConsole */
 /* unused harmony export toConsoleError */
-/* harmony export (immutable) */ __webpack_exports__["b"] = toText;
+/* harmony export (immutable) */ __webpack_exports__["c"] = toText;
 /* unused harmony export toFail */
 /* unused harmony export fsFormat */
 /* unused harmony export format */
@@ -5582,7 +4499,7 @@ function getGenericArguments(typ) {
 /* unused harmony export padLeft */
 /* unused harmony export padRight */
 /* unused harmony export remove */
-/* unused harmony export replace */
+/* harmony export (immutable) */ __webpack_exports__["b"] = replace;
 /* unused harmony export replicate */
 /* unused harmony export getCharAtIndex */
 /* unused harmony export split */
@@ -6122,6 +5039,1132 @@ function filter(pred, x) {
 }
 
 /***/ }),
+/* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = choice1Of2;
+/* harmony export (immutable) */ __webpack_exports__["b"] = choice2Of2;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Symbol__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Util__ = __webpack_require__(1);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+function choice1Of2(v) {
+    return new Choice(0, v);
+}
+function choice2Of2(v) {
+    return new Choice(1, v);
+}
+
+var Choice = function () {
+    function Choice(tag, data) {
+        _classCallCheck(this, Choice);
+
+        this.tag = tag | 0;
+        this.data = data;
+    }
+
+    _createClass(Choice, [{
+        key: "Equals",
+        value: function Equals(other) {
+            return Object(__WEBPACK_IMPORTED_MODULE_1__Util__["f" /* equalsUnions */])(this, other);
+        }
+    }, {
+        key: "CompareTo",
+        value: function CompareTo(other) {
+            return Object(__WEBPACK_IMPORTED_MODULE_1__Util__["d" /* compareUnions */])(this, other);
+        }
+    }, {
+        key: __WEBPACK_IMPORTED_MODULE_0__Symbol__["a" /* default */].reflection,
+        value: function value() {
+            return {
+                type: "Microsoft.FSharp.Core.FSharpChoice",
+                interfaces: ["FSharpUnion", "System.IEquatable", "System.IComparable"],
+                cases: [["Choice1Of2", __WEBPACK_IMPORTED_MODULE_1__Util__["a" /* Any */]], ["Choice2Of2", __WEBPACK_IMPORTED_MODULE_1__Util__["a" /* Any */]]]
+            };
+        }
+    }, {
+        key: "valueIfChoice1",
+        get: function get() {
+            return this.tag === 0 ? this.data : null;
+        }
+    }, {
+        key: "valueIfChoice2",
+        get: function get() {
+            return this.tag === 1 ? this.data : null;
+        }
+    }]);
+
+    return Choice;
+}();
+
+/* unused harmony default export */ var _unused_webpack_default_export = (Choice);
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_fs__ = __webpack_require__(15);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "publicKey", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["c"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "log", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["b"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "urlB64toUint8Array", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["e"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "showNotification", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["d"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "btn", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["a"]; });
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return publicKey; });
+/* harmony export (immutable) */ __webpack_exports__["b"] = log;
+/* harmony export (immutable) */ __webpack_exports__["e"] = urlB64toUint8Array;
+/* harmony export (immutable) */ __webpack_exports__["d"] = showNotification;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return btn; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Option__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Serialize__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_String__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_AsyncBuilder__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_List__ = __webpack_require__(3);
+
+
+
+
+
+
+var publicKey = "BJp5MVatM7Y8_zXrrQrG4L8uAowhLpQQYkA2w3hs6t4x_apmjyO7HdUe8bJBxfI4ziufPaIg4Twurm4JfgzLO4I";
+function log(x) {
+  console.log(Object(__WEBPACK_IMPORTED_MODULE_0__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Option__["c" /* makeSome */])(x));
+  var p = document.createElement("p");
+  p.textContent = Object(__WEBPACK_IMPORTED_MODULE_1__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Serialize__["a" /* toJson */])(x);
+  document.body.appendChild(p), void 0;
+}
+function urlB64toUint8Array(x) {
+  var missingPaddingChars = (4 - x.length % 4) % 4 | 0;
+  var paddedX = void 0;
+
+  switch (missingPaddingChars) {
+    case 0:
+      paddedX = x;
+      break;
+
+    case 1:
+      paddedX = x + "=";
+      break;
+
+    case 2:
+      paddedX = x + "==";
+      break;
+
+    case 3:
+      paddedX = x + "===";
+      break;
+
+    default:
+      throw new Error("cannot happen");
+  }
+
+  var base64 = Object(__WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_String__["b" /* replace */])(Object(__WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_String__["b" /* replace */])(paddedX, "-", "+"), "_", "/");
+  var rawX = window.atob(base64);
+  var result = new Uint8Array(rawX.length);
+
+  for (var i = 0; i <= rawX.length; i++) {
+    result[i] = rawX.charCodeAt(i);
+  }
+
+  return result;
+}
+function showNotification() {
+  Object(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["b" /* startImmediate */])(function (builder_) {
+    return builder_.Delay(function () {
+      return builder_.TryWith(builder_.Delay(function () {
+        var reg = navigator.serviceWorker.register("worker.js");
+        return builder_.Bind(Object(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(reg), function (_arg1) {
+          return builder_.Bind(Object(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(_arg1.pushManager.getSubscription()), function (_arg2) {
+            return builder_.Bind(function (builder__1) {
+              return builder__1.Delay(function () {
+                return _arg2 == null ? builder__1.ReturnFrom(Object(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(_arg1.pushManager.subscribe({
+                  userVisibleOnly: true,
+                  applicationServerKey: urlB64toUint8Array(publicKey)
+                }))) : builder__1.Return(_arg2);
+              });
+            }(__WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_AsyncBuilder__["f" /* singleton */]), function (_arg3) {
+              log(_arg3);
+              return builder_.Bind(Object(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(Notification.requestPermission()), function (_arg4) {
+                if (_arg4 === "granted1") {
+                  log("granted");
+                  _arg1.showNotification("Vibration sample", {
+                    body: "Buzz! Buzz! ",
+                    vibrate: Object(__WEBPACK_IMPORTED_MODULE_5__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_List__["b" /* ofArray */])([200, 100, 200, 100, 200, 100, 200])
+                  }), void 0;
+                  return builder_.Zero();
+                } else {
+                  log("denied");
+                  return builder_.Zero();
+                }
+              });
+            });
+          });
+        });
+      }), function (_arg5) {
+        log(_arg5);
+        return builder_.Zero();
+      });
+    });
+  }(__WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_AsyncBuilder__["f" /* singleton */]));
+}
+var btn = document.getElementById("btn1");
+btn.addEventListener("click", function (evt) {
+  showNotification();
+});
+
+/***/ }),
+/* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export deflate */
+/* harmony export (immutable) */ __webpack_exports__["a"] = toJson;
+/* unused harmony export inflate */
+/* unused harmony export ofJson */
+/* unused harmony export toJsonWithTypeInfo */
+/* unused harmony export ofJsonWithTypeInfo */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Date__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__DateOffset__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__List__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Map__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Option__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Reflection__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Seq__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Set__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__String__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Symbol__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Util__ = __webpack_require__(1);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+// tslint:disable:ban-types
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function isDate(v) {
+    return v instanceof Date;
+}
+function deflateDate(v) {
+    return Object(__WEBPACK_IMPORTED_MODULE_0__Date__["i" /* toString */])(v, "O");
+}
+function deflateValue(v) {
+    if (isDate(v)) {
+        return deflateDate(v);
+    }
+    return v;
+}
+function deflate(v) {
+    if (Array.isArray(v)) {
+        return v.map(deflateValue);
+    } else if (ArrayBuffer.isView(v)) {
+        return Array.from(v).map(deflateValue);
+    } else if (isDate(v)) {
+        return deflateDate(v);
+    } else if (v != null && (typeof v === "undefined" ? "undefined" : _typeof(v)) === "object") {
+        if (v instanceof __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */] || v instanceof __WEBPACK_IMPORTED_MODULE_7__Set__["b" /* default */] || v instanceof Set) {
+            return Array.from(v).map(deflateValue);
+        } else if (v instanceof __WEBPACK_IMPORTED_MODULE_3__Map__["b" /* default */] || v instanceof Map) {
+            var stringKeys = null;
+            return Object(__WEBPACK_IMPORTED_MODULE_6__Seq__["d" /* fold */])(function (o, kv) {
+                if (stringKeys === null) {
+                    stringKeys = typeof kv[0] === "string";
+                }
+                o[stringKeys ? kv[0] : toJson(kv[0])] = deflateValue(kv[1]);
+                return o;
+            }, {}, v);
+        } else if (v instanceof __WEBPACK_IMPORTED_MODULE_4__Option__["a" /* Some */]) {
+            return deflateValue(v.value);
+        }
+        var reflectionInfo = typeof v[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection] === "function" ? v[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection]() : {};
+        if (reflectionInfo.properties) {
+            return Object(__WEBPACK_IMPORTED_MODULE_6__Seq__["d" /* fold */])(function (o, prop) {
+                return o[prop] = deflateValue(v[prop]), o;
+            }, {}, Object.getOwnPropertyNames(reflectionInfo.properties));
+        } else if (reflectionInfo.cases) {
+            var caseInfo = reflectionInfo.cases[v.tag];
+            var caseName = caseInfo[0];
+            var fieldsLength = caseInfo.length - 1;
+            if (fieldsLength === 0) {
+                return caseName;
+            } else {
+                // Prevent undefined assignment from removing case property; see #611:
+                return _defineProperty({}, caseName, v.data !== void 0 ? deflate(v.data) : null);
+            }
+        } else {
+            return Object(__WEBPACK_IMPORTED_MODULE_6__Seq__["d" /* fold */])(function (o, prop) {
+                return o[prop] = deflateValue(v[prop]), o;
+            }, {}, Object.getOwnPropertyNames(v));
+        }
+    }
+    return v;
+}
+function toJson(o) {
+    return JSON.stringify(deflateValue(o), function (k, v) {
+        return deflate(v);
+    });
+}
+function combine(path1, path2) {
+    return typeof path2 === "number" ? path1 + "[" + path2 + "]" : (path1 ? path1 + "." : "") + path2;
+}
+function isNullable(typ) {
+    if (typeof typ === "string") {
+        return typ !== "boolean" && typ !== "number";
+    } else if (typ instanceof __WEBPACK_IMPORTED_MODULE_10__Util__["b" /* NonDeclaredType */]) {
+        return typ.kind !== "Array" && typ.kind !== "Tuple";
+    } else {
+        var info = typeof typ.prototype[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection] === "function" ? typ.prototype[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection]() : null;
+        return info ? info.nullable : true;
+    }
+}
+function invalidate(val, typ, path) {
+    var str = Object(__WEBPACK_IMPORTED_MODULE_8__String__["c" /* toText */])(Object(__WEBPACK_IMPORTED_MODULE_8__String__["a" /* printf */])("%A"))(val);
+    throw new Error(str + " " + (path ? "(" + path + ")" : "") + " is not of type " + Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["a" /* getTypeFullName */])(typ));
+}
+function needsInflate(enclosing) {
+    var typ = enclosing.head;
+    if (typeof typ === "string") {
+        return false;
+    }
+    if (typ instanceof __WEBPACK_IMPORTED_MODULE_10__Util__["b" /* NonDeclaredType */]) {
+        switch (typ.kind) {
+            case "Option":
+            case "Array":
+                return typ.definition != null || needsInflate(new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](typ.generics[0], enclosing));
+            case "Tuple":
+                return typ.generics.some(function (x) {
+                    return needsInflate(new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](x, enclosing));
+                });
+            case "Function":
+                return false;
+            case "GenericParam":
+                return needsInflate(Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(typ.definition, enclosing.tail));
+            case "GenericType":
+                return true;
+            default:
+                return false;
+        }
+    }
+    return true;
+}
+function inflateArray(arr, enclosing, path) {
+    if (!Array.isArray) {
+        invalidate(arr, "array", path);
+    }
+    // TODO: Validate non-inflated elements
+    return needsInflate(enclosing) ? arr.map(function (x, i) {
+        return inflate(x, enclosing, combine(path, i));
+    }) : arr;
+}
+function inflateMap(obj, keyEnclosing, valEnclosing, path) {
+    var inflateKey = keyEnclosing.head !== "string";
+    var inflateVal = needsInflate(valEnclosing);
+    return Object.getOwnPropertyNames(obj).map(function (k) {
+        var key = inflateKey ? inflate(JSON.parse(k), keyEnclosing, combine(path, k)) : k;
+        var val = inflateVal ? inflate(obj[k], valEnclosing, combine(path, k)) : obj[k];
+        return [key, val];
+    });
+}
+function inflateList(val, enclosing, path) {
+    var ar = [];
+    var li = new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */]();
+    var cur = val;
+    var inf = needsInflate(enclosing);
+    while (cur.tail != null) {
+        ar.push(inf ? inflate(cur.head, enclosing, path) : cur.head);
+        cur = cur.tail;
+    }
+    ar.reverse();
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = ar[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var a = _step.value;
+
+            li = new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](a, li);
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+
+    return li;
+}
+function inflateUnion(val, typ, info, path, inflateField) {
+    var caseName = void 0;
+    // Same shape as runtime DUs, for example, if they've been serialized with `JSON.stringify`
+    if (typeof val.tag === "number") {
+        return Object.assign(new typ(), val);
+    } else if (typeof val === "string") {
+        // Cases without fields are serialized as strings by `toJson`
+        caseName = val;
+    } else {
+        // Non-empty cases are serialized as `{ "MyCase": [1, 2] }` by `toJson`
+        caseName = Object.getOwnPropertyNames(val)[0];
+    }
+    // Locate case index
+    var tag = -1;
+    for (var i = 0; info.cases[i] != null; i++) {
+        if (info.cases[i][0] === caseName) {
+            tag = i;
+            break;
+        }
+    }
+    // Validate
+    if (tag === -1) {
+        invalidate(val, typ, path);
+    }
+    var caseInfo = info.cases[tag];
+    var inflatedData = void 0;
+    if (caseInfo.length > 2) {
+        inflatedData = [];
+        var data = val[caseName];
+        path = combine(path, caseName);
+        for (var _i = 0; _i < data.length; _i++) {
+            inflatedData.push(inflateField ? inflateField(data[_i], caseInfo[_i + 1], combine(path, _i)) : data[_i]);
+        }
+    } else if (caseInfo.length > 1) {
+        inflatedData = inflateField ? inflateField(val[caseName], caseInfo[1], combine(path, caseName)) : val[caseName];
+    }
+    return new typ(tag, inflatedData);
+}
+function inflate(val, typ, path) {
+    var enclosing = null;
+    if (typ instanceof __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */]) {
+        enclosing = typ;
+        typ = typ.head;
+    } else {
+        enclosing = new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](typ, new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */]());
+    }
+    if (val == null) {
+        if (!isNullable(typ)) {
+            invalidate(val, typ, path);
+        }
+        return val;
+    } else if (typeof typ === "string") {
+        if ((typ === "boolean" || typ === "number" || typ === "string") && (typeof val === "undefined" ? "undefined" : _typeof(val)) !== typ) {
+            invalidate(val, typ, path);
+        }
+        return val;
+    } else if (typ instanceof __WEBPACK_IMPORTED_MODULE_10__Util__["b" /* NonDeclaredType */]) {
+        switch (typ.kind) {
+            case "Unit":
+                return null;
+            case "Option":
+                return inflate(val, new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](typ.generics[0], enclosing), path);
+            case "Array":
+                if (typ.definition != null) {
+                    return new typ.definition(val);
+                } else {
+                    return inflateArray(val, new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](typ.generics[0], enclosing), path);
+                }
+            case "Tuple":
+                return typ.generics.map(function (x, i) {
+                    return inflate(val[i], new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](x, enclosing), combine(path, i));
+                });
+            case "Function":
+                return val;
+            case "GenericParam":
+                return inflate(val, Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(typ.definition, enclosing.tail), path);
+            case "GenericType":
+                var def = typ.definition;
+                if (def === __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */]) {
+                    return Array.isArray(val) ? Object(__WEBPACK_IMPORTED_MODULE_2__List__["b" /* ofArray */])(inflateArray(val, Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(0, enclosing), path)) : inflateList(val, Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(0, enclosing), path);
+                }
+                // TODO: Should we try to inflate also sets and maps serialized with `JSON.stringify`?
+                if (def === __WEBPACK_IMPORTED_MODULE_7__Set__["b" /* default */]) {
+                    return Object(__WEBPACK_IMPORTED_MODULE_7__Set__["a" /* create */])(inflateArray(val, Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(0, enclosing), path));
+                }
+                if (def === Set) {
+                    return new Set(inflateArray(val, Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(0, enclosing), path));
+                }
+                if (def === __WEBPACK_IMPORTED_MODULE_3__Map__["b" /* default */]) {
+                    return Object(__WEBPACK_IMPORTED_MODULE_3__Map__["a" /* create */])(inflateMap(val, Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(0, enclosing), Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(1, enclosing), path));
+                }
+                if (def === Map) {
+                    return new Map(inflateMap(val, Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(0, enclosing), Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["b" /* resolveGeneric */])(1, enclosing), path));
+                }
+                return inflate(val, new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](typ.definition, enclosing), path);
+            case "Interface":
+                return typ.definition === "System.DateTimeOffset" ? Object(__WEBPACK_IMPORTED_MODULE_1__DateOffset__["a" /* parse */])(val) : val;
+            default:
+                // case "Interface": // case "Any":
+                return val;
+        }
+    } else if (typeof typ === "function") {
+        if (typ === Date) {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__Date__["g" /* parse */])(val, true);
+        }
+        if (typeof typ.ofJSON === "function") {
+            return typ.ofJSON(val);
+        }
+        var info = typeof typ.prototype[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection] === "function" ? typ.prototype[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection]() : {};
+        // Union types
+        if (info.cases) {
+            return inflateUnion(val, typ, info, path, function (fi, t, p) {
+                return inflate(fi, new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](t, enclosing), path);
+            });
+        }
+        if (info.properties) {
+            var newObj = new typ();
+            var properties = info.properties;
+            var ks = Object.getOwnPropertyNames(properties);
+            var _iteratorNormalCompletion2 = true;
+            var _didIteratorError2 = false;
+            var _iteratorError2 = undefined;
+
+            try {
+                for (var _iterator2 = ks[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                    var k = _step2.value;
+
+                    newObj[k] = inflate(val[k], new __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */](properties[k], enclosing), combine(path, k));
+                }
+            } catch (err) {
+                _didIteratorError2 = true;
+                _iteratorError2 = err;
+            } finally {
+                try {
+                    if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                        _iterator2.return();
+                    }
+                } finally {
+                    if (_didIteratorError2) {
+                        throw _iteratorError2;
+                    }
+                }
+            }
+
+            return newObj;
+        }
+        return val;
+    }
+    throw new Error("Unexpected type when deserializing JSON: " + typ);
+}
+function inflatePublic(val, genArgs) {
+    return inflate(val, genArgs ? genArgs.T : null, "");
+}
+
+function ofJson(json, genArgs) {
+    function raise(msg, err, json, targetType) {
+        var fullMsg = "Cannot deserialize";
+        if (targetType != null) {
+            fullMsg += " into " + Object(__WEBPACK_IMPORTED_MODULE_5__Reflection__["a" /* getTypeFullName */])(targetType);
+        }
+        fullMsg += " - Error (" + msg + "): " + err.message + " - Data: '" + json + "'";
+        throw new Error(fullMsg);
+    }
+    var value = null;
+    var targetType = genArgs ? genArgs.T : null;
+    try {
+        value = JSON.parse(json);
+    } catch (e) {
+        raise("JSON.parse", e, json, targetType);
+    }
+    try {
+        value = inflate(value, targetType, "");
+    } catch (e) {
+        raise("inflate", e, json, targetType);
+    }
+    return value;
+}
+// TODO: Dates and types with `toJSON` are not adding the $type field
+function toJsonWithTypeInfo(val) {
+    return JSON.stringify(val, function (k, v) {
+        if (ArrayBuffer.isView(v)) {
+            return Array.from(v);
+        } else if (v != null && (typeof v === "undefined" ? "undefined" : _typeof(v)) === "object") {
+            var info = typeof v[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection] === "function" ? v[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection]() : {};
+            if (v instanceof __WEBPACK_IMPORTED_MODULE_2__List__["a" /* default */] || v instanceof __WEBPACK_IMPORTED_MODULE_7__Set__["b" /* default */] || v instanceof Set) {
+                return {
+                    $type: info.type || "System.Collections.Generic.HashSet",
+                    $values: Array.from(v)
+                };
+            } else if (v instanceof __WEBPACK_IMPORTED_MODULE_3__Map__["b" /* default */] || v instanceof Map) {
+                return Object(__WEBPACK_IMPORTED_MODULE_6__Seq__["d" /* fold */])(function (o, kv) {
+                    o[kv[0]] = kv[1];return o;
+                }, { $type: info.type || "System.Collections.Generic.Dictionary" }, v);
+            } else if (info.properties) {
+                return Object(__WEBPACK_IMPORTED_MODULE_6__Seq__["d" /* fold */])(function (o, prop) {
+                    return o[prop] = v[prop], o;
+                }, { $type: info.type }, Object.getOwnPropertyNames(info.properties));
+            } else if (info.cases) {
+                var _ref2;
+
+                var uci = info.cases[v.tag];
+                return _ref2 = {}, _defineProperty(_ref2, uci[0], v.data !== void 0 ? v.data : null), _defineProperty(_ref2, "$type", info.type), _ref2;
+            }
+        }
+        return v;
+    });
+}
+function ofJsonWithTypeInfo(json, genArgs) {
+    var parsed = JSON.parse(json, function (key, v) {
+        if (v == null) {
+            return v;
+        } else if ((typeof v === "undefined" ? "undefined" : _typeof(v)) === "object" && typeof v.$type === "string") {
+            // Remove generic args and assembly info added by Newtonsoft.Json
+            var type = v.$type.replace("+", ".");
+            var i = type.indexOf("`");
+            delete v.$type;
+            if (i > -1) {
+                type = type.substr(0, i);
+            } else {
+                i = type.indexOf(",");
+                type = i > -1 ? type.substr(0, i) : type;
+            }
+            if (type === "System.Collections.Generic.List" || type.indexOf("[]") === type.length - 2) {
+                return v.$values;
+            }
+            if (type === "Microsoft.FSharp.Collections.FSharpList") {
+                return Object(__WEBPACK_IMPORTED_MODULE_2__List__["b" /* ofArray */])(v.$values);
+            } else if (type === "Microsoft.FSharp.Collections.FSharpSet") {
+                return Object(__WEBPACK_IMPORTED_MODULE_7__Set__["a" /* create */])(v.$values);
+            } else if (type === "System.Collections.Generic.HashSet") {
+                return new Set(v.$values);
+            } else if (type === "Microsoft.FSharp.Collections.FSharpMap") {
+                return Object(__WEBPACK_IMPORTED_MODULE_3__Map__["a" /* create */])(Object.getOwnPropertyNames(v).map(function (k) {
+                    return [k, v[k]];
+                }));
+            } else if (type === "System.Collections.Generic.Dictionary") {
+                return new Map(Object.getOwnPropertyNames(v).map(function (k) {
+                    return [k, v[k]];
+                }));
+            } else {
+                var typ = Object(__WEBPACK_IMPORTED_MODULE_9__Symbol__["b" /* getType */])(type);
+                if (typ) {
+                    if (typeof typ.ofJSON === "function") {
+                        return typ.ofJSON(v);
+                    }
+                    var info = typeof typ.prototype[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection] === "function" ? typ.prototype[__WEBPACK_IMPORTED_MODULE_9__Symbol__["a" /* default */].reflection]() : {};
+                    if (info.cases) {
+                        return inflateUnion(v, typ, info, key);
+                    }
+                    return Object.assign(new typ(), v);
+                }
+            }
+        } else if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:[+-]\d{2}:\d{2}|Z)$/.test(v)) {
+            return Object(__WEBPACK_IMPORTED_MODULE_0__Date__["g" /* parse */])(v, true);
+        } else {
+            return v;
+        }
+    });
+    var expected = genArgs ? genArgs.T : null;
+    if (parsed != null && typeof expected === "function" && !(parsed instanceof Object(__WEBPACK_IMPORTED_MODULE_10__Util__["g" /* getDefinition */])(expected))) {
+        throw new Error("JSON is not of type " + expected.name + ": " + json);
+    }
+    return parsed;
+}
+
+/***/ }),
+/* 17 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export default */
+/* unused harmony export fromDate */
+/* unused harmony export minValue */
+/* unused harmony export maxValue */
+/* harmony export (immutable) */ __webpack_exports__["a"] = parse;
+/* unused harmony export tryParse */
+/* unused harmony export create */
+/* unused harmony export now */
+/* unused harmony export utcNow */
+/* unused harmony export toUniversalTime */
+/* unused harmony export toLocalTime */
+/* unused harmony export timeOfDay */
+/* unused harmony export date */
+/* unused harmony export day */
+/* unused harmony export hour */
+/* unused harmony export millisecond */
+/* unused harmony export minute */
+/* unused harmony export month */
+/* unused harmony export second */
+/* unused harmony export year */
+/* unused harmony export dayOfWeek */
+/* unused harmony export dayOfYear */
+/* unused harmony export add */
+/* unused harmony export addDays */
+/* unused harmony export addHours */
+/* unused harmony export addMinutes */
+/* unused harmony export addSeconds */
+/* unused harmony export addMilliseconds */
+/* unused harmony export addYears */
+/* unused harmony export addMonths */
+/* unused harmony export subtract */
+/* unused harmony export equals */
+/* unused harmony export equalsExact */
+/* unused harmony export compare */
+/* unused harmony export compareTo */
+/* unused harmony export op_Addition */
+/* unused harmony export op_Subtraction */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Date__ = __webpack_require__(7);
+
+function DateTimeOffset(value, offset) {
+    var d = new Date(value);
+    d.offset = offset != null ? offset : new Date().getTimezoneOffset() * -60000;
+    return d;
+}
+function fromDate(date, offset) {
+    var isUtc = date.kind === 1 /* UTC */;
+    var offset2 = isUtc ? 0 : date.getTimezoneOffset() * -60000;
+    if (offset != null && offset !== offset2) {
+        throw new Error(isUtc ? "The UTC Offset for Utc DateTime instances must be 0." : "The UTC Offset of the local dateTime parameter does not match the offset argument.");
+    }
+    return DateTimeOffset(date.getTime(), offset2);
+}
+function minValue() {
+    // This is "0001-01-01T00:00:00.000Z", actual JS min value is -8640000000000000
+    return DateTimeOffset(-62135596800000, 0);
+}
+function maxValue() {
+    // This is "9999-12-31T23:59:59.999Z", actual JS max value is 8640000000000000
+    return DateTimeOffset(253402300799999, 0);
+}
+function parse(str) {
+    var date = Object(__WEBPACK_IMPORTED_MODULE_0__Date__["h" /* parseRaw */])(str);
+    var offsetMatch = __WEBPACK_IMPORTED_MODULE_0__Date__["d" /* offsetRegex */].exec(str);
+    var offset = offsetMatch == null ? date.getTimezoneOffset() * -60000 : offsetMatch[0] === "Z" ? 0 : parseInt(offsetMatch[1], 10) * 3600000 + parseInt(offsetMatch[2], 10) * 60000;
+    return DateTimeOffset(date.getTime(), offset);
+}
+function tryParse(v) {
+    try {
+        return [true, parse(v)];
+    } catch (_err) {
+        return [false, minValue()];
+    }
+}
+function create(year, month, day, h, m, s, ms, offset) {
+    if (offset == null) {
+        offset = ms;
+        ms = 0;
+    }
+    if (offset !== 0) {
+        if (offset % 60000 !== 0) {
+            throw new Error("Offset must be specified in whole minutes");
+        }
+        if (~~(offset / 3600000) > 14) {
+            throw new Error("Offset must be within plus or minus 14 hour");
+        }
+    }
+    var date = void 0;
+    if (offset === 0) {
+        date = new Date(Date.UTC(year, month - 1, day, h, m, s, ms));
+        if (year <= 99) {
+            date.setFullYear(year, month - 1, day);
+        }
+    } else {
+        var str = Object(__WEBPACK_IMPORTED_MODULE_0__Date__["f" /* padWithZeros */])(year, 4) + "-" + Object(__WEBPACK_IMPORTED_MODULE_0__Date__["f" /* padWithZeros */])(month, 2) + "-" + Object(__WEBPACK_IMPORTED_MODULE_0__Date__["f" /* padWithZeros */])(day, 2) + "T" + Object(__WEBPACK_IMPORTED_MODULE_0__Date__["f" /* padWithZeros */])(h, 2) + ":" + Object(__WEBPACK_IMPORTED_MODULE_0__Date__["f" /* padWithZeros */])(m, 2) + ":" + Object(__WEBPACK_IMPORTED_MODULE_0__Date__["f" /* padWithZeros */])(s, 2) + "." + Object(__WEBPACK_IMPORTED_MODULE_0__Date__["f" /* padWithZeros */])(ms, 3) + Object(__WEBPACK_IMPORTED_MODULE_0__Date__["e" /* offsetToString */])(offset);
+        date = new Date(str);
+    }
+    var dateValue = date.getTime();
+    if (isNaN(dateValue)) {
+        throw new Error("The parameters describe an unrepresentable Date");
+    }
+    return DateTimeOffset(dateValue, offset);
+}
+function now() {
+    var date = new Date();
+    return DateTimeOffset(date.getTime(), date.getTimezoneOffset() * -60000);
+}
+function utcNow() {
+    return DateTimeOffset(Date.now(), 0);
+}
+function toUniversalTime(date) {
+    return DateTimeOffset(date.getTime(), 0);
+}
+function toLocalTime(date) {
+    return DateTimeOffset(date.getTime(), date.getTimezoneOffset() * -60000);
+}
+function timeOfDay(d) {
+    var d2 = new Date(d.getTime() + d.offset);
+    return d2.getUTCHours() * 3600000 + d2.getUTCMinutes() * 60000 + d2.getUTCSeconds() * 1000 + d2.getUTCMilliseconds();
+}
+function date(d) {
+    var d2 = new Date(d.getTime() + d.offset);
+    return Object(__WEBPACK_IMPORTED_MODULE_0__Date__["b" /* create */])(d2.getUTCFullYear(), d2.getUTCMonth() + 1, d2.getUTCDate(), 0, 0, 0, 0);
+}
+function day(d) {
+    return new Date(d.getTime() + d.offset).getUTCDate();
+}
+function hour(d) {
+    return new Date(d.getTime() + d.offset).getUTCHours();
+}
+function millisecond(d) {
+    return new Date(d.getTime() + d.offset).getUTCMilliseconds();
+}
+function minute(d) {
+    return new Date(d.getTime() + d.offset).getUTCMinutes();
+}
+function month(d) {
+    return new Date(d.getTime() + d.offset).getUTCMonth() + 1;
+}
+function second(d) {
+    return new Date(d.getTime() + d.offset).getUTCSeconds();
+}
+function year(d) {
+    return new Date(d.getTime() + d.offset).getUTCFullYear();
+}
+function dayOfWeek(d) {
+    return new Date(d.getTime() + d.offset).getUTCDay();
+}
+function dayOfYear(d) {
+    var d2 = new Date(d.getTime() + d.offset);
+    var _year = d2.getUTCFullYear();
+    var _month = d2.getUTCMonth() + 1;
+    var _day = d2.getUTCDate();
+    for (var i = 1; i < _month; i++) {
+        _day += Object(__WEBPACK_IMPORTED_MODULE_0__Date__["c" /* daysInMonth */])(_year, i);
+    }
+    return _day;
+}
+function add(d, ts) {
+    return DateTimeOffset(d.getTime() + ts, d.offset);
+}
+function addDays(d, v) {
+    return DateTimeOffset(d.getTime() + v * 86400000, d.offset);
+}
+function addHours(d, v) {
+    return DateTimeOffset(d.getTime() + v * 3600000, d.offset);
+}
+function addMinutes(d, v) {
+    return DateTimeOffset(d.getTime() + v * 60000, d.offset);
+}
+function addSeconds(d, v) {
+    return DateTimeOffset(d.getTime() + v * 1000, d.offset);
+}
+function addMilliseconds(d, v) {
+    return DateTimeOffset(d.getTime() + v, d.offset);
+}
+function addYears(d, v) {
+    var newMonth = d.getUTCMonth() + 1;
+    var newYear = d.getUTCFullYear() + v;
+    var _daysInMonth = Object(__WEBPACK_IMPORTED_MODULE_0__Date__["c" /* daysInMonth */])(newYear, newMonth);
+    var newDay = Math.min(_daysInMonth, d.getUTCDate());
+    return create(newYear, newMonth, newDay, d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds(), d.getUTCMilliseconds(), d.offset);
+}
+function addMonths(d, v) {
+    var d2 = new Date(d.getTime() + d.offset);
+    var newMonth = d2.getUTCMonth() + 1 + v;
+    var newMonth_ = 0;
+    var yearOffset = 0;
+    if (newMonth > 12) {
+        newMonth_ = newMonth % 12;
+        yearOffset = Math.floor(newMonth / 12);
+        newMonth = newMonth_;
+    } else if (newMonth < 1) {
+        newMonth_ = 12 + newMonth % 12;
+        yearOffset = Math.floor(newMonth / 12) + (newMonth_ === 12 ? -1 : 0);
+        newMonth = newMonth_;
+    }
+    var newYear = d2.getUTCFullYear() + yearOffset;
+    var _daysInMonth = Object(__WEBPACK_IMPORTED_MODULE_0__Date__["c" /* daysInMonth */])(newYear, newMonth);
+    var newDay = Math.min(_daysInMonth, d2.getUTCDate());
+    return create(newYear, newMonth, newDay, d2.getUTCHours(), d2.getUTCMinutes(), d2.getUTCSeconds(), d2.getUTCMilliseconds(), d.offset);
+}
+function subtract(d, that) {
+    return typeof that === "number" ? DateTimeOffset(d.getTime() - that, d.offset) : d.getTime() - that.getTime();
+}
+function equals(d1, d2) {
+    return d1.getTime() === d2.getTime();
+}
+function equalsExact(d1, d2) {
+    return d1.getTime() === d2.getTime() && d1.offset === d2.offset;
+}
+function compare(d1, d2) {
+    return Object(__WEBPACK_IMPORTED_MODULE_0__Date__["a" /* compare */])(d1, d2);
+}
+var compareTo = compare;
+function op_Addition(x, y) {
+    return add(x, y);
+}
+function op_Subtraction(x, y) {
+    return subtract(x, y);
+}
+
+/***/ }),
+/* 18 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export MemberInfo */
+/* harmony export (immutable) */ __webpack_exports__["b"] = resolveGeneric;
+/* unused harmony export getType */
+/* harmony export (immutable) */ __webpack_exports__["a"] = getTypeFullName;
+/* unused harmony export getName */
+/* unused harmony export getPrototypeOfType */
+/* unused harmony export getProperties */
+/* unused harmony export getUnionCases */
+/* unused harmony export getPropertyValues */
+/* unused harmony export getUnionFields */
+/* unused harmony export makeUnion */
+/* unused harmony export getTupleElements */
+/* unused harmony export isTupleType */
+/* unused harmony export getFunctionElements */
+/* unused harmony export isFunctionType */
+/* unused harmony export getGenericArguments */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__List__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Symbol__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Util__ = __webpack_require__(1);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+var MemberInfo = function () {
+    function MemberInfo(name, index, declaringType, propertyType, unionFields) {
+        _classCallCheck(this, MemberInfo);
+
+        this.name = name;
+        this.index = index;
+        this.declaringType = declaringType;
+        this.propertyType = propertyType;
+        this.unionFields = unionFields;
+    }
+
+    _createClass(MemberInfo, [{
+        key: "getUnionFields",
+        value: function getUnionFields() {
+            var _this = this;
+
+            return this.unionFields.map(function (fi, i) {
+                return new MemberInfo("unknown", i, _this.declaringType, fi);
+            });
+        }
+    }]);
+
+    return MemberInfo;
+}();
+function resolveGeneric(idx, enclosing) {
+    try {
+        var t = enclosing.head;
+        if (t.generics == null) {
+            return resolveGeneric(idx, enclosing.tail);
+        } else {
+            var name = typeof idx === "string" ? idx : Object.getOwnPropertyNames(t.generics)[idx];
+            var resolved = t.generics[name];
+            if (resolved == null) {
+                return resolveGeneric(idx, enclosing.tail);
+            } else if (resolved instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */] && resolved.kind === "GenericParam") {
+                return resolveGeneric(resolved.definition, enclosing.tail);
+            } else {
+                return new __WEBPACK_IMPORTED_MODULE_0__List__["a" /* default */](resolved, enclosing);
+            }
+        }
+    } catch (err) {
+        throw new Error("Cannot resolve generic argument " + idx + ": " + err);
+    }
+}
+function getType(obj) {
+    var t = typeof obj === "undefined" ? "undefined" : _typeof(obj);
+    switch (t) {
+        case "boolean":
+        case "number":
+        case "string":
+        case "function":
+            return t;
+        default:
+            return Object.getPrototypeOf(obj).constructor;
+    }
+}
+// TODO: This needs improvement, check namespace for non-custom types?
+function getTypeFullName(typ, option) {
+    function trim(fullName, opt) {
+        if (typeof fullName !== "string") {
+            return "unknown";
+        }
+        if (opt === "name") {
+            var i = fullName.lastIndexOf(".");
+            return fullName.substr(i + 1);
+        }
+        if (opt === "namespace") {
+            var _i = fullName.lastIndexOf(".");
+            return _i > -1 ? fullName.substr(0, _i) : "";
+        }
+        return fullName;
+    }
+    if (typeof typ === "string") {
+        return typ;
+    } else if (typ instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */]) {
+        switch (typ.kind) {
+            case "Unit":
+                return "unit";
+            case "Option":
+                return getTypeFullName(typ.generics[0], option) + " option";
+            case "Array":
+                return getTypeFullName(typ.generics[0], option) + "[]";
+            case "Tuple":
+                return typ.generics.map(function (x) {
+                    return getTypeFullName(x, option);
+                }).join(" * ");
+            case "Function":
+                return "Func<" + typ.generics.map(function (x) {
+                    return getTypeFullName(x, option);
+                }).join(", ") + ">";
+            case "GenericParam":
+            case "Interface":
+                return typ.definition;
+            case "GenericType":
+                return getTypeFullName(typ.definition, option);
+            case "Any":
+            default:
+                return "unknown";
+        }
+    } else {
+        // Attention: this doesn't work with Object.getPrototypeOf
+        var proto = typ.prototype;
+        return trim(typeof proto[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection] === "function" ? proto[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection]().type : null, option);
+    }
+}
+function getName(x) {
+    if (x instanceof MemberInfo) {
+        return x.name;
+    }
+    return getTypeFullName(x, "name");
+}
+function getPrototypeOfType(typ) {
+    if (typeof typ === "string") {
+        return null;
+    } else if (typ instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */]) {
+        return typ.kind === "GenericType" ? typ.definition.prototype : null;
+    } else {
+        return typ.prototype;
+    }
+}
+function getProperties(typ) {
+    var proto = getPrototypeOfType(typ);
+    if (proto != null && typeof proto[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection] === "function") {
+        var info = proto[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection]();
+        if (info.properties) {
+            return Object.getOwnPropertyNames(info.properties).map(function (k, i) {
+                return new MemberInfo(k, i, typ, info.properties[k]);
+            });
+        }
+    }
+    throw new Error("Type " + getTypeFullName(typ) + " doesn't contain property info.");
+}
+function getUnionCases(typ) {
+    var proto = getPrototypeOfType(typ);
+    if (proto != null && typeof proto[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection] === "function") {
+        var info = proto[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection]();
+        if (info.cases) {
+            return info.cases.map(function (uci, i) {
+                return new MemberInfo(uci[0], i, typ, null, uci.slice(1));
+            });
+        }
+    }
+    throw new Error("Type " + getTypeFullName(typ) + " doesn't contain union case info.");
+}
+function getPropertyValues(obj) {
+    return Object(__WEBPACK_IMPORTED_MODULE_2__Util__["h" /* getPropertyNames */])(obj).map(function (k) {
+        return obj[k];
+    });
+}
+function getUnionFields(obj, typ) {
+    if (obj != null && typeof obj[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection] === "function") {
+        var info = obj[__WEBPACK_IMPORTED_MODULE_1__Symbol__["a" /* default */].reflection]();
+        if (info.cases) {
+            var uci = info.cases[obj.tag];
+            if (uci != null) {
+                var fields = uci.length > 2 ? obj.data : uci.length > 1 ? [obj.data] : [];
+                return [new MemberInfo(uci[0], obj.tag, typ, null, uci.slice(1)), fields];
+            }
+        }
+    }
+    throw new Error("Not an F# union type.");
+}
+function makeUnion(caseInfo, args) {
+    var Cons = Object(__WEBPACK_IMPORTED_MODULE_2__Util__["g" /* getDefinition */])(caseInfo.declaringType);
+    switch (args.length) {
+        case 0:
+            return new Cons(caseInfo.index);
+        case 1:
+            return new Cons(caseInfo.index, args[0]);
+        default:
+            return new Cons(caseInfo.index, args);
+    }
+}
+function getTupleElements(typ) {
+    if (typ instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */] && typ.kind === "Tuple") {
+        return typ.generics;
+    }
+    throw new Error("Type " + getTypeFullName(typ) + " is not a tuple type.");
+}
+function isTupleType(typ) {
+    if (typ instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */]) {
+        return typ.kind === "Tuple";
+    }
+    return false;
+}
+function getFunctionElements(typ) {
+    if (typ === "function") {
+        throw new Error("The type of the function must be known at compile time to get the elements.");
+    }
+    if (typ instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */] && typ.kind === "Function") {
+        return typ.generics;
+    }
+    throw new Error("Type " + getTypeFullName(typ) + " is not a function type.");
+}
+function isFunctionType(typ) {
+    return typ === "function" || typ instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */] && typ.kind === "Function";
+}
+function getGenericArguments(typ) {
+    if (typ instanceof __WEBPACK_IMPORTED_MODULE_2__Util__["b" /* NonDeclaredType */]) {
+        if (Array.isArray(typ.generics)) {
+            return typ.generics;
+        } else {
+            var dic = typ.generics;
+            return Object.keys(dic).map(function (k) {
+                return dic[k];
+            });
+        }
+    }
+    return [];
+}
+
+/***/ }),
 /* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -6263,7 +6306,7 @@ function split(reg, input, limit) {
 /* unused harmony export startWithContinuations */
 /* unused harmony export startAsPromise */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AsyncBuilder__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Choice__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Choice__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Seq__ = __webpack_require__(0);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
