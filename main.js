@@ -5200,7 +5200,7 @@ function showNotification() {
             }(__WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_AsyncBuilder__["f" /* singleton */]), function (_arg3) {
               log(_arg3);
               return builder_.Bind(Object(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(Notification.requestPermission()), function (_arg4) {
-                if (_arg4 === "granted1") {
+                if (_arg4 === "granted") {
                   log("granted");
                   _arg1.showNotification("Vibration sample", {
                     body: "Buzz! Buzz! ",
