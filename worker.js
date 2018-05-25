@@ -1,8 +1,9 @@
 console.log("Worker.js running");
 
-self.addEventListener('push', function(evt){
+// self.addEventListener('push', function(evt){
+self.onpush = function(evt){
   console.log('[Service Worker] Push Received.');
-  console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
+  console.log(`[Service Worker] Push had this data: "${evt.data.text()}"`);
 
   const title = 'Push Codelab';
   const options = {
@@ -11,8 +12,8 @@ self.addEventListener('push', function(evt){
     badge: 'images/badge.png'
   };
 
-  event.waitUntil(self.registration.showNotification(title, options));
-});
+  evt.waitUntil(self.registration.showNotification(title, options));
+};
 
 self.addEventListener('notificationclick', function(evt) {
     console.log("On notification click");

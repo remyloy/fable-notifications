@@ -1032,7 +1032,7 @@ function zip3(xs, ys, zs) {
 /* unused harmony export sign */
 /* unused harmony export randomNext */
 /* unused harmony export applyOperator */
-/* unused harmony export unescapeDataString */
+/* harmony export (immutable) */ __webpack_exports__["j"] = unescapeDataString;
 /* unused harmony export escapeDataString */
 /* unused harmony export escapeUriString */
 /* unused harmony export clear */
@@ -5131,10 +5131,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return btn; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Option__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Serialize__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_String__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_AsyncBuilder__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_List__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Util__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_String__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_AsyncBuilder__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_List__ = __webpack_require__(3);
+
 
 
 
@@ -5173,38 +5175,43 @@ function urlB64toUint8Array(x) {
       throw new Error("cannot happen");
   }
 
-  var base64 = Object(__WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_String__["b" /* replace */])(Object(__WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_String__["b" /* replace */])(paddedX, "-", "+"), "_", "/");
+  var base64 = void 0;
+  console.log(Object(__WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Util__["j" /* unescapeDataString */])(paddedX));
+  base64 = Object(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_String__["b" /* replace */])(Object(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_String__["b" /* replace */])(paddedX, "-", "+"), "_", "/");
+  console.log(base64);
   var rawX = window.atob(base64);
   var result = new Uint8Array(rawX.length);
 
-  for (var i = 0; i <= rawX.length; i++) {
-    result[i] = rawX.charCodeAt(i);
+  for (var i = 0; i <= rawX.length - 1; i++) {
+    result[i] = function ($var1) {
+      return $var1.charCodeAt(0);
+    }(rawX[i]);
   }
 
   return result;
 }
 function showNotification() {
-  Object(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["b" /* startImmediate */])(function (builder_) {
+  Object(__WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["b" /* startImmediate */])(function (builder_) {
     return builder_.Delay(function () {
       return builder_.TryWith(builder_.Delay(function () {
         var reg = navigator.serviceWorker.register("worker.js");
-        return builder_.Bind(Object(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(reg), function (_arg1) {
-          return builder_.Bind(Object(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(_arg1.pushManager.getSubscription()), function (_arg2) {
+        return builder_.Bind(Object(__WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(reg), function (_arg1) {
+          return builder_.Bind(Object(__WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(_arg1.pushManager.getSubscription()), function (_arg2) {
             return builder_.Bind(function (builder__1) {
               return builder__1.Delay(function () {
-                return _arg2 == null ? builder__1.ReturnFrom(Object(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(_arg1.pushManager.subscribe({
+                return _arg2 == null ? builder__1.ReturnFrom(Object(__WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(_arg1.pushManager.subscribe({
                   userVisibleOnly: true,
                   applicationServerKey: urlB64toUint8Array(publicKey)
                 }))) : builder__1.Return(_arg2);
               });
-            }(__WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_AsyncBuilder__["f" /* singleton */]), function (_arg3) {
+            }(__WEBPACK_IMPORTED_MODULE_5__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_AsyncBuilder__["f" /* singleton */]), function (_arg3) {
               log(_arg3);
-              return builder_.Bind(Object(__WEBPACK_IMPORTED_MODULE_3__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(Notification.requestPermission()), function (_arg4) {
+              return builder_.Bind(Object(__WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(Notification.requestPermission()), function (_arg4) {
                 if (_arg4 === "granted") {
                   log("granted");
                   _arg1.showNotification("Vibration sample", {
                     body: "Buzz! Buzz! ",
-                    vibrate: Object(__WEBPACK_IMPORTED_MODULE_5__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_List__["b" /* ofArray */])([200, 100, 200, 100, 200, 100, 200])
+                    vibrate: Object(__WEBPACK_IMPORTED_MODULE_6__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_List__["b" /* ofArray */])([200, 100, 200, 100, 200, 100, 200])
                   }), void 0;
                   return builder_.Zero();
                 } else {
@@ -5220,8 +5227,9 @@ function showNotification() {
         return builder_.Zero();
       });
     });
-  }(__WEBPACK_IMPORTED_MODULE_4__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_AsyncBuilder__["f" /* singleton */]));
+  }(__WEBPACK_IMPORTED_MODULE_5__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_AsyncBuilder__["f" /* singleton */]));
 }
+urlB64toUint8Array(publicKey), void 0;
 var btn = document.getElementById("btn1");
 btn.addEventListener("click", function (evt) {
   showNotification();
