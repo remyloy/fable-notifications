@@ -4542,9 +4542,10 @@ var Choice = function () {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_fs__ = __webpack_require__(14);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "log", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["b"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "showNotification", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["c"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "btn", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["a"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PushManager$2E$subscribe", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["a"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "log", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["c"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "showNotification", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["d"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "btn", function() { return __WEBPACK_IMPORTED_MODULE_0__App_fs__["b"]; });
 
 
 /***/ }),
@@ -4552,9 +4553,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["b"] = log;
-/* harmony export (immutable) */ __webpack_exports__["c"] = showNotification;
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return btn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PushManager_subscribe; });
+/* harmony export (immutable) */ __webpack_exports__["c"] = log;
+/* harmony export (immutable) */ __webpack_exports__["d"] = showNotification;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return btn; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Option__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Serialize__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__ = __webpack_require__(20);
@@ -4563,6 +4565,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+
+
+
+function PushManager_subscribe(options) {
+  throw new Error("not implemented");
+}
 
 
 function log(x) {
@@ -4580,7 +4588,7 @@ function showNotification() {
           return builder_.Bind(Object(__WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(_arg1.pushManager.getSubscription()), function (_arg2) {
             return builder_.Bind(function (builder__1) {
               return builder__1.Delay(function () {
-                return _arg2 == null ? builder__1.ReturnFrom(Object(__WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(subscribe({
+                return _arg2 == null ? builder__1.ReturnFrom(Object(__WEBPACK_IMPORTED_MODULE_2__Users_r_loy_nuget_packages_fable_core_1_3_17_fable_core_Async__["a" /* awaitPromise */])(PushManager_subscribe.bind(_arg1.pushManager)({
                   userVisibleOnly: true
                 }))) : builder__1.Return(_arg2);
               });
